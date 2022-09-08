@@ -1,4 +1,5 @@
-#include "gamma_correction.h"
+// #include "gamma_correction.h"
+#include <image_preproc_ros_tool/gamma_correction.h>
 
 int main (int argc, char *argv[]) {
     // ROS setup and parameter handling
