@@ -1,4 +1,4 @@
-#include <image_preproc_ros_tool/gamma_correction.h>
+#include <image_preproc/gamma_correction.h>
 
 GammaCorrector::GammaCorrector(ros::NodeHandle& nodeHandle, ros::NodeHandle& privateNodeHandle, const std::string name) {
   name_ = name;
@@ -10,7 +10,7 @@ GammaCorrector::GammaCorrector(ros::NodeHandle& nodeHandle, ros::NodeHandle& pri
   std::string tgtTopic = nodeHandle.resolveName("tgt/image");
 
   srv_.reset(new ReconfigureServer(privateNodeHandle));
-  dynamic_reconfigure::Server<image_preproc_ros_tool::GammaCorrectionConfig>::CallbackType f(
+  dynamic_reconfigure::Server<image_preproc::GammaCorrectionConfig>::CallbackType f(
           boost::bind(&GammaCorrector::reconfigureRequest, this, _1, _2));
   srv_->setCallback(f);
 
@@ -20,7 +20,7 @@ GammaCorrector::GammaCorrector(ros::NodeHandle& nodeHandle, ros::NodeHandle& pri
                                                   ros::TransportHints().tcpNoDelay());
 }
 
-void GammaCorrector::reconfigureRequest(const image_preproc_ros_tool::GammaCorrectionConfig& cfg, uint32_t) {
+void GammaCorrector::reconfigureRequest(const image_preproc::GammaCorrectionConfig& cfg, uint32_t) {
   gamma_ = cfg.gamma;
   autoGamma_ = cfg.auto_gamma;
 }

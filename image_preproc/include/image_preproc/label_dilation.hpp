@@ -5,9 +5,9 @@
 
 #include <sensor_msgs/Image.h>
 
-#include "image_preproc_ros_tool/LabelDilationInterface.h"
+#include "image_preproc/LabelDilationInterface.h"
 
-namespace image_preproc_ros_tool {
+namespace image_preproc {
 
 class LabelDilation {
 

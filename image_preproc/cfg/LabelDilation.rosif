@@ -46,4 +46,4 @@ pub_sub.add_publisher("publisher", message_type="sensor_msgs::Image", descriptio
 
 # DO NOT TOUCH THIS LINE
 #Syntax : Package, Node, Config Name(The final name will be LabelDilationConfig)
-exit(gen.generate("image_preproc_ros_tool", "label_dilation", "LabelDilation"))
+exit(gen.generate("image_preproc", "label_dilation", "LabelDilation"))

@@ -19,9 +19,9 @@
 #include <sensor_msgs/Image.h>
 #include <stereo_msgs/DisparityImage.h>
 
-#include "image_preproc_ros_tool/Disp2pointcloudInterface.h"
+#include "image_preproc/Disp2pointcloudInterface.h"
 
-namespace image_preproc_ros_tool {
+namespace image_preproc {
 
 class Disp2pointcloud {
 

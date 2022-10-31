@@ -62,4 +62,4 @@ gen.add("output_camera_info", paramtype="std::string", description="Topic for ou
 
 # DO NOT TOUCH THIS LINE
 #Syntax : Package, Node, Config Name(The final name will be ResizeConfig)
-exit(gen.generate("image_preproc_ros_tool", "resize", "Resize"))
+exit(gen.generate("image_preproc", "resize", "Resize"))

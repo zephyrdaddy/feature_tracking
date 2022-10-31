@@ -61,4 +61,4 @@ gen.add("focal_length", paramtype='double', description="Overwrite focal length"
 
 # DO NOT TOUCH THIS LINE
 #Syntax : Package, Node, Config Name(The final name will be Disp2pointcloudConfig)
-exit(gen.generate("image_preproc_ros_tool", "disp2pointcloud", "Disp2pointcloud"))
+exit(gen.generate("image_preproc", "disp2pointcloud", "Disp2pointcloud"))

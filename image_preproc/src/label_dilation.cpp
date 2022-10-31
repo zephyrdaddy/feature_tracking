@@ -1,8 +1,8 @@
-#include "label_dilation.hpp"
+#include <image_preproc/label_dilation.hpp>
 
 #include <cv_bridge/cv_bridge.h>
 
-namespace image_preproc_ros_tool {
+namespace image_preproc {
 
 LabelDilation::LabelDilation(ros::NodeHandle nh_public, ros::NodeHandle nh_private)
         : interface_{nh_private}, reconfigureServer_{nh_private} {

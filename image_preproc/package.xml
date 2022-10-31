@@ -28,7 +28,13 @@
   -->
 
   <depend>mrt_opencv</depend>
-
+  <depend>roslib</depend>
+  <depend>dynamic_reconfigure</depend>
+  <depend>cv_bridge</depend>
+  <depend>rosinterface_handler</depend>
+  <depend>message_filters</depend>
+  <depend>pcl_ros</depend>
+  <depend>pcl_conversions</depend>
   <export>
     <!-- Other tools can request additional information be placed here -->
   </export>

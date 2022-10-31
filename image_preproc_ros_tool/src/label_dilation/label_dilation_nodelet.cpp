@@ -2,7 +2,7 @@
 #include <nodelet/nodelet.h>
 #include <pluginlib/class_list_macros.h>
 
-#include "label_dilation.hpp"
+#include <image_preproc/label_dilation.h>
 
 namespace image_preproc_ros_tool {
 

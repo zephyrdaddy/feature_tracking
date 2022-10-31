@@ -1,7 +1,7 @@
 #include <memory>
 #include <nodelet/nodelet.h>
 #include <pluginlib/class_list_macros.h>
-#include <image_preproc_ros_tool/gamma_correction.h>
+#include <image_preproc/gamma_correction.h>
 
 // #include "gamma_correction.h"
 
