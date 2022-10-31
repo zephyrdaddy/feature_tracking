@@ -1,4 +1,4 @@
-#include "label_dilation.hpp"
+#include <image_preproc/label_dilation.h>
 
 int main(int argc, char* argv[]) {
 

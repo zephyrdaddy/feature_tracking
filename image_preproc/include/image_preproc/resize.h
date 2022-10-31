@@ -5,11 +5,11 @@
 #include <image_transport/image_transport.h>
 #include <dynamic_reconfigure/server.h>
 
-#include "image_preproc_ros_tool/ResizeInterface.h"
+#include "image_preproc/ResizeInterface.h"
 
 class Resize {
-  using Parameters = image_preproc_ros_tool::ResizeInterface;
-  using Config = image_preproc_ros_tool::ResizeConfig;
+  using Parameters = image_preproc::ResizeInterface;
+  using Config = image_preproc::ResizeConfig;
   using ReconfigureServer = dynamic_reconfigure::Server<Config>;
 public:
   Resize(ros::NodeHandle& nodeHandle, ros::NodeHandle& privateNodeHandle, const std::string name);

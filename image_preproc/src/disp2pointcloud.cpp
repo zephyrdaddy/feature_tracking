@@ -1,4 +1,5 @@
-#include "disp2pointcloud.hpp"
+// #include "disp2pointcloud.hpp"
+#include <image_preproc/disp2pointcloud.hpp>
 
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
@@ -10,7 +11,7 @@
 using Point = pcl::PointXYZI;
 using Cloud = pcl::PointCloud<Point>;
 
-namespace image_preproc_ros_tool {
+namespace image_preproc {
 
 Disp2pointcloud::Disp2pointcloud(ros::NodeHandle nh_public, ros::NodeHandle nh_private)
         : it_{nh_private}, params_{nh_private}, reconfigureServer_{nh_private} {

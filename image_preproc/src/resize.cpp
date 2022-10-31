@@ -1,4 +1,5 @@
-#include "resize.h"
+#include <image_preproc/resize.h>
+
 #include <sensor_msgs/image_encodings.h>
 
 Resize::Resize(ros::NodeHandle& nodeHandle, ros::NodeHandle& privateNodeHandle, const std::string name)

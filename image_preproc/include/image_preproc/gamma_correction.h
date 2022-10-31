@@ -4,17 +4,17 @@
 #include <sensor_msgs/Image.h>
 #include <dynamic_reconfigure/server.h>
 #include <image_preproc/brightness_correction.h>
-#include <image_preproc_ros_tool/GammaCorrectionConfig.h>
+#include <image_preproc/GammaCorrectionConfig.h>
 
 
 class GammaCorrector {
-  using ReconfigureServer = dynamic_reconfigure::Server<image_preproc_ros_tool::GammaCorrectionConfig>;
+  using ReconfigureServer = dynamic_reconfigure::Server<image_preproc::GammaCorrectionConfig>;
 public:
   GammaCorrector(ros::NodeHandle& nodeHandle, ros::NodeHandle& privateNodeHandle, const std::string name);
 
 private:
 
-  void reconfigureRequest(const image_preproc_ros_tool::GammaCorrectionConfig& cfg, uint32_t);
+  void reconfigureRequest(const image_preproc::GammaCorrectionConfig& cfg, uint32_t);
   void handleImage (const sensor_msgs::Image::ConstPtr& imgMsg);
 
 
