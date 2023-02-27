@@ -3,21 +3,22 @@
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/Image.h>
 #include <dynamic_reconfigure/server.h>
-#include <image_preproc/brightness_correction.h>
+#include <image_preproc/image_preproc_params.h>
+#include <image_preproc/gamma_corrector.h>
 #include <image_preproc_ros_tool/GammaCorrectionConfig.h>
 
 
-class GammaCorrector {
+class GammaCorrectorModule {
   using ReconfigureServer = dynamic_reconfigure::Server<image_preproc_ros_tool::GammaCorrectionConfig>;
 public:
-  GammaCorrector(ros::NodeHandle& nodeHandle, ros::NodeHandle& privateNodeHandle, const std::string name);
+  GammaCorrectorModule(ros::NodeHandle& nodeHandle, ros::NodeHandle& privateNodeHandle, const std::string name);
 
 private:
 
   void reconfigureRequest(const image_preproc_ros_tool::GammaCorrectionConfig& cfg, uint32_t);
   void handleImage (const sensor_msgs::Image::ConstPtr& imgMsg);
 
-
+  image_preproc::GammaCorrector gamma_corrector_;
   ros::Publisher pub_;
   ros::Subscriber sub_;
   std::unique_ptr<ReconfigureServer> srv_;
