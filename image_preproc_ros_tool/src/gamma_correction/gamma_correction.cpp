@@ -1,4 +1,4 @@
-#include "gamma_correction_module.h"
+#include "gamma_correction.h"
 
 GammaCorrectorModule::GammaCorrectorModule(ros::NodeHandle& nodeHandle, ros::NodeHandle& privateNodeHandle, const std::string name) {
   name_ = name;

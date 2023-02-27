@@ -2,7 +2,7 @@
 #include <nodelet/nodelet.h>
 #include <pluginlib/class_list_macros.h>
 
-#include "gamma_correction_module.h"
+#include "gamma_correction.h"
 
 namespace image_preproc_ros_tool {
 
