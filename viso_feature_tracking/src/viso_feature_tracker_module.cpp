@@ -22,8 +22,7 @@ void VisoFeatureTrackerModule::process(cv::Mat& src, const ros::Time& time) {
                    viso_params_.blur_sigma);
 
   tracker_->pushBack(src);
-  tracker_->getTracklets(this->tracklets_, 0);
-
+  tracker_->getTracklets(tracklets_, 0);
   this->timestamps_.push_front(time);
 }
 

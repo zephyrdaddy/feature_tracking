@@ -23,7 +23,7 @@
 namespace viso_feature_tracking {
 class VisoFeatureTrackerModule {
  public:
-  VisoFeatureTrackerModule(Configuration& config, Parameters& params)
+  VisoFeatureTrackerModule(const Configuration& config, const Parameters& params)
       : config_(config), viso_params_(params){
         tracker_ = std::make_shared<feature_tracking::TrackerLibViso>(viso_params_);
       };
@@ -46,8 +46,8 @@ class VisoFeatureTrackerModule {
   /// old)
   std::deque<ros::Time> timestamps_;
 
-  Configuration config_;
-  Parameters viso_params_;
+  const Configuration config_;
+  const Parameters viso_params_;
 
   ///@brief maximum size of timestamps_
   int max_size_timestamps_ = 1000;
