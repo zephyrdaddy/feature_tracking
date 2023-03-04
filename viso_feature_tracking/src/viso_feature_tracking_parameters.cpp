@@ -8,9 +8,9 @@
  *  and others
  */
 
-#include "viso_feature_tracking_parameters.h"
+#include "viso_feature_tracking/viso_feature_tracking_parameters.h"
 
-namespace viso_feature_tracking_ros_tool {
+namespace viso_feature_tracking {
 
 // wrappers for reading nodes from yaml
 template <typename T>

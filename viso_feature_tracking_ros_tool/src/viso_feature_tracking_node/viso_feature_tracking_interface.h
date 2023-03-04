@@ -10,24 +10,11 @@
 
 #pragma once
 
-// standard includes
-#include <cassert>
-#include <cmath>
-#include <fstream>
-#include <iomanip>
-#include <iostream>
-#include <map>
-#include <memory>
-#include <sstream>
-#include <string>
-#include <tuple>
-#include <vector>
-
 #include <ros/ros.h>
 
-#include <feature_tracking_core/tracker_libviso.h>
-#include "viso_feature_tracking_interface.h"
-#include "viso_feature_tracking_parameters.h"
+#include "viso_feature_tracking/viso_feature_tracking_parameters.h"
+
+#include "viso_feature_tracking/viso_feature_tracker_module.h"
 
 #include <sensor_msgs/Image.h>
 
@@ -44,26 +31,17 @@ private: // attributes
     ros::Subscriber subscriber_image_;
 
     ///@brief params for setting up the node
-    Configuration config;
-    Parameters viso_params;
+    viso_feature_tracking::Configuration config;
+    viso_feature_tracking::Parameters viso_params;
 
-    ///@brief store info that shall be published, from current to old
-    feature_tracking::TrackletVector tracklets_;
-
-    ///@brief timestamps storage for matches, descending order (from current to old)
-    std::deque<ros::Time> timestamps_;
-
-    ///@brief maximum size of timestamps_
-    int max_size_timestamps_ = 1000;
+    std::unique_ptr<viso_feature_tracking::VisoFeatureTrackerModule> tracker_module_;
 
 private: // methods
     ///@brief process the input from ros, execute sampler, publish it as odometry
     void process(const sensor_msgs::ImageConstPtr& input);
 
-    ///@brief publish odometry as rostopic
-    void publish(const std::deque<ros::Time>& timestamps);
+    ///@brief publish feature matching as rostopic
+    void publish();
 
-    ///@brief pointer to tracker
-    std::shared_ptr<feature_tracking::TrackerLibViso> tracker;
 };
 }
