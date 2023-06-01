@@ -4,6 +4,8 @@
 #include <cv_bridge/cv_bridge.h>
 
 #include <feature_tracking_core/tracker_libviso.h>
+#include <feature_tracking_core/visualization.h>
+
 #include <matches_msg_ros/MatchesMsg.h>
 #include <rosinterface_handler/utilities.hpp>
 //#include <eigen_conversions/eigen_msg.h>
@@ -33,6 +35,7 @@ VisoFeatureTrackingInterface::VisoFeatureTrackingInterface(ros::NodeHandle node_
     tracker_module_.reset(new viso_feature_tracking::VisoFeatureTrackerModule(config, viso_params));
     // tracker = std::make_shared<feature_tracking::TrackerLibViso>(viso_params);
 
+
     /*
      * Publisher
      */
@@ -52,7 +55,7 @@ void VisoFeatureTrackingInterface::process(const sensor_msgs::ImageConstPtr& inp
     auto start = cl::high_resolution_clock::now();
     // execute tracker and write matches
     cv_bridge::CvImagePtr cv_bridge_ptr = cv_bridge::toCvCopy(input);
-
+    printf("Process feature tracking \n");
     ROS_DEBUG_STREAM("viso_feature_tracking: image_size=" << cv_bridge_ptr->image.rows << " x "
                                                           << cv_bridge_ptr->image.cols
                                                           << "\nscaling factor="

@@ -152,6 +152,8 @@ protected:
     std::unique_ptr<viso2::Matcher> matcher_; ///< LibViso matcher used internally
     TrackletList tracklets_;                  ///< internal memory of tracklets
     Parameters params_;                       ///< internal memory of parameters
+    std::vector<cv::Mat> images_;
+    int img_idx_ = 0;
 };
 
 } // namespace
