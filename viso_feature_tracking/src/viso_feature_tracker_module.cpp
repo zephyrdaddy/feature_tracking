@@ -24,6 +24,16 @@ void VisoFeatureTrackerModule::process(cv::Mat& src, const ros::Time& time) {
   tracker_->pushBack(src);
   tracker_->getTracklets(tracklets_, 0);
   this->timestamps_.push_front(time);
+
+    // static std::vector<cv::Mat> images;
+    // images.insert(images.begin(), cv_bridge_ptr->image);
+    // cv::Mat output;
+    // feature_tracking::visualization::drawMatches(tracklet_list, images, output);
+    // static int cnt = 0;
+    // std::string img_fname = "/tmp/out_" + std::to_string(cnt++) + ".png";
+    // cv::imwrite(img_fname, output);
+
+
 }
 
 void VisoFeatureTrackerModule::reduce() {
